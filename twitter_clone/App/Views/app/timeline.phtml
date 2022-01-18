@@ -1,0 +1,212 @@
+<nav class="navbar navbar-expand-lg menu">
+	<div class="container">
+	  <a href="/timeline"><img src="/img/urso.png" class="menuIco" /></a>
+	</div>
+</nav>
+
+<div class="container-fluid mt-5">
+	<div class="row pt-2 mt">	
+		<div class="col-md-3">
+			<div class="perfil">
+				<div class="perfilPainel mt-2 pt-1">				
+					<div class="row mt-2 mb-2">
+						<div class="col mb-2">
+							<span class="perfilPainelNome text-capitalize">
+								<?= $this->view->info_usuario['nome'] ?>
+							</span>
+						</div>
+					</div>
+
+					<div class="row mb-2">
+
+						<div class="col">
+							<span class="perfilPainelItem">Tweets</span><br />
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_tweets['total_tweet'] ?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="perfilPainelItem">Seguindo</span><br />
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_seguindo['total_seguindo'] ?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="perfilPainelItem">Seguidores</span><br />
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_seguidores['total_seguidores'] ?>
+							</span>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="perfilTopo">
+					<div class="navbar-nav">
+						<a class="my-2 mt-4" href="/timeline">
+							<span class="menuLink"><i class="fas fa-igloo pr-2"></i> Home</span>
+						</a>
+
+						<a class="my-2" href="/timeline">
+							<span class="menuLink"><i class="fas fa-hashtag pr-2"></i> Explore</span>
+						</a>
+						
+						<a class="my-2" href="/timeline">
+							<span class="menuLink"><i class="far fa-bell pr-2"></i> Notificações</span>
+						</a>
+						
+						<a class="my-2" href="/timeline">
+							<span class="menuLink"><i class="far fa-envelope pr-2"></i> Mensagens</span>
+						</a>
+
+						<a class="my-2" href="/timeline">
+							<span class="menuLink"><i class="far fa-bookmark pr-2"></i> Favoritos</span>
+						</a>
+
+						<a class="my-2" href="/timeline">
+							<span class="menuLink"><i class="far fa-list-alt pr-2"></i> Listas</span>
+						</a>
+
+						<a class="my-2" href="/timeline">
+							<span class="menuLink"><i class="fas fa-user-alt pr-2"></i> Perfil</span>
+						</a>
+
+						<a class="my-2" href="/timeline">
+							<span class="menuLink"><i class="fas fa-caret-down pr-2"></i> Mais</span>
+						</a>
+
+						<a class="my-2" href="/sair">
+							<span class="menuLink"><i class="fas fa-sign-out-alt pr-2"></i> Sair</span>
+						</a>
+						<a href="/timeline">
+							<button class="btn btn-primary btn-rounded btn-tweet2">Tweet</button>
+						</a>
+						
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div class="col-md-6 central">
+			<div class="row mb-2 mt-2 mt-md-0">
+				<div class="col tweetBox mt-0">
+					<form method="post" action="/tweet">
+						<input class="input-tweet" name="tweet" placeholder="O que está acontecendo?" id="exampleFormControlTextarea1" rows="3" minlength="2" maxlength="400">
+						<div class="w-75">
+							<ul class="nav icons-enviar-tweet">
+								<li class="nav-item">
+									<a class="nav-link"><i class="fas fa-images"></i></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link"><i class="fas fa-smile"></i></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link"><i class="fas fa-poll-h"></i></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link"><i class="fas fa-calendar-day"></i></a>
+								</li>
+							</ul>
+						</div>
+						<div class="col mt-2 d-flex justify-content-end">
+							<button type="submit" class="btn btn-primary btn-rounded btn-tweet">Tweet</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+
+			<?php $cont = 0; foreach($this->view->tweets as $id_tweet => $tweet) { ?>
+				<div class="row tweet px-5">
+					<div class="pt-2 col">
+						<div class="pai1">
+							<button onclick="pop(<?=$cont;?>)" class="col options" >
+								<i class="fas fa-ellipsis-h"></i>
+								<div class="popoverClass">
+									<?php if($tweet['id_usuario'] == $_SESSION['id']) { ?>
+										<a href="/remover?id=<?=$tweet['id']?>" class="btn btn-remover">Excluir</a>
+									<?php }else{echo 'Sem funcionalidade';} ?>
+								</div>
+							</button>
+						</div>
+						
+						
+						<p><strong class="text-capitalize nome-tweet"><?=$tweet['nome']?></strong> <small><span class="text text-muted">- <?=$tweet['data']?></span></small></p>
+						<p><?=$tweet['tweet']?></p>
+						<div class="icons-tweet row d-flex py-2 mx-auto d-flex justify-content-between w-75">
+							<span class="p-2"><i class="far fa-comment"></i></span>
+							<span class="p-2"><i class="fas fa-retweet"></i></span>
+							<span class="p-2"><i class="far fa-heart"></i></span>
+							<span class="p-2"><i class="fas fa-external-link-alt"></i></span>
+						</div>
+					</div>
+				</div>
+			<?php $cont+=1;} ?>
+		</div>
+		<div class="col-md-3">
+			<div class="quemSeguir mt-2 pt-3">
+				<span class="quemSeguirTitulo">Quem seguir</span><br />
+				<hr />
+				<a href="/quem_seguir" class="quemSeguirTxt">Procurar por pessoas conhecidas</a>
+				<div class="tops">
+				    <span class="top-title">O que está acontecendo</span>
+					<div class="top-trends">
+						<small class="trends-tipo">Reality TV . Noite passada</small>
+						<span class="top-trends-desc">Os participantes do 'BBB 22' foram revelados! Vem dar uma espiadinha para conhecer os irmãos e irmãs</span>
+					</div>
+					<div class="top-trends">
+						<span class="col-9 m-0 p-0">
+							<small class="trends-tipo">Mais comentados do Brasil</small>
+							<span class="trends-title text-uppercase">meteoro</span><br>
+							<small class="trends-qtd">300k Tweets</small>
+						</span>
+						<span class="col-3">
+
+						</span>
+						
+					</div>
+					<div class="top-trends">
+						<span class="col-9 m-0 p-0">
+							<small class="trends-tipo">Competição . Tendência</small> <br>
+							<span class="trends-title text-uppercase">BBB</span> <br>
+							<small class="trends-qtd">430k Tweets</small>
+						</span>
+						<span class="col-3">
+
+						</span>
+						
+					</div>
+					<div class="top-trends">
+						<span class="col-10 m-0 p-0">
+							<small class="trends-tipo">Liga Premiere . Tendência</small>
+							<span class="trends-title text-uppercase">Manchester City vs Chelsea FC</span> <br>
+							<small class="trends-qtd">50k Tweets</small>
+						</span>
+						<span class="col-2">
+							
+						</span>
+					</div>
+					<div class="top-trends-more">
+						<span class="more">
+							Veja mais
+						</span>
+					</div>
+				</div>		
+				<div class="termos d-flex flex-wrap">
+					<small>
+						<span>Terms of Service</span>
+						<span>Privacy Policy</span>
+						<span>Cookie Policy</span>
+						<span>Accessibility</span>
+						<span>Ads info</span>
+						<span>More</span>
+						<span>© 2022 Twitter, Inc.</span>
+					</small> 
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,446 @@
+html, body {
+  height: 100%;
+  background-color: #000000;
+  color: #D9D9D9;
+  text-decoration: none;
+}
+
+.body {
+    z-index: 1;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+	font-family: "Segoe UI", Arial, sans-serif;
+}
+
+h1 {
+	display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+	display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.banner {
+	height: 100vh;
+	background-color: #3E065F;
+}
+
+.img-index {
+    position: relative;
+    left: 10vw;
+}
+
+.btn-primary.btn-primary.btn-primary.btn-primary.btn-primary {
+    background-color: #3E065F;
+    border: none;
+}
+
+.btn-primary.btn-primary.btn-primary.btn-primary.btn-primary:hover {
+    background-color: #700B97;
+    border: none;
+}
+
+.title {
+	color: #700B97;
+	font-size: 27px;
+    line-height: 32px;
+}
+
+.subtitle {
+	color: #D9D9D9;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px auto;
+}
+
+.form-control {
+	background-color: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+}
+
+.comunicacao {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.communicationItem {
+	color: rgb(255, 255, 255);
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    margin: 48px auto;
+    position: relative;
+}
+
+.menu {
+    background-color: #000000;
+    border-bottom: 1px solid #2F3336;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-nav a:hover {
+    text-decoration: none;
+}
+
+.menuLink {
+    font-size: 1.1em;
+    color: #D9D9D9;
+    padding: 10px 20px;
+    width: auto;
+    text-decoration: none;
+}
+
+.menuLink:hover {
+    text-decoration:double;
+    background-color: #d9d9d91a;
+    border-radius: 42px;
+    text-decoration: none;
+}
+
+.card-color {
+    background-color: #000000;
+}
+
+.bloco {
+    padding: 20px 15px;
+}
+
+.menuIco {
+    width: 50px;
+    height: auto;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-25px;
+    margin-left:-15px;
+}
+
+.perfil {
+    position: fixed;
+    margin-bottom: 10px;
+    display: block;
+    width: 20vw;
+    left: 2vw;
+}
+
+.perfilTopo {
+    height: auto;
+    margin-left: -15px;
+    margin-bottom: 30px;
+}
+
+.perfilPainelNome {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.perfilPainelItem  {
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .02em;
+    line-height: 16px;
+    overflow: hidden;
+    transition: color .15s ease-in-out;
+}
+
+.perfilPainelItemValor {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 3px;
+}
+
+.tweetBox {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border-top: 1px solid #2F3336;
+    border-bottom: 1px solid #2F3336;
+    padding: 25px;
+    position: relative;
+    top: -7px;
+}
+
+.icons-enviar-tweet {
+    color: #700B97;
+    text-decoration: none;
+    position: absolute;
+    bottom: 16px;
+    left: 45px;
+}
+
+ .nav-link.nav-link.nav-link.nav-link, .nav-item.nav-item.nav-item {
+    text-align: center;
+    padding: 6px;
+}
+
+.icons-enviar-tweet li:hover {
+    background-color: #6f0b974d;
+    border-radius: 100%;
+}
+
+.quemSeguir {
+    position: fixed;
+    margin-top: 20px;
+    display: block;
+    width: 20vw;
+    right: 2vw;
+}
+
+.quemSeguirTitulo {
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.quemSeguirTxt, .quemSeguirTxt:hover {
+    color: #a83bd3;
+    text-decoration: none;
+    position: absolute;
+    top: 40px;
+}
+
+.tops {
+    border-radius: 20px;
+    background-color: #15181C;
+    padding-top: 20px;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+.top-trends, .top-trends-more {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10;
+    margin: 0;
+    cursor: pointer;
+}
+
+.top-trends-more:hover {
+    background-color: #2F3336;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.top-trends:hover {
+    background-color: #2F3336;
+}
+
+.trends-tipo, .trends-qtd {
+    color: #596774;
+    font-size: 0.7em;
+}
+
+.top-title {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 15px;
+    cursor: default;
+}
+
+.more {
+    color: #a83bd3;
+    font-size: 0.7em;
+}
+
+.input-pesquisa {
+    color: #D9D9D9;
+    width: 90%;
+    background-color: #15181C;
+    border-radius: 42px;
+    border: 1px solid #2f333600;
+    padding: 10px 20px;
+}
+
+input.input-pesquisa:focus {
+    outline: none;
+    border: 1px solid #1da1f2;
+}
+
+.central {
+    position: relative;
+    top: -10px;
+    border-left: 1px solid #2F3336;
+    border-right: 1px solid #2F3336;
+    margin-bottom: -10px;
+}
+
+.tweet {
+    padding:15px;
+    border-bottom: 1px solid #2F3336;
+    cursor: pointer;
+}
+
+.options {
+    text-align: center;
+    color: #2F3336;
+    width: 31px;
+    float: right;
+    padding: 8px 5px;
+    z-index: 2;
+}
+
+.options:hover {
+    background-color: #6f0b976e;
+    color: #a83bd3;
+    border-radius: 100%;
+}
+
+.nome-tweet:hover {
+    text-decoration: underline;
+}
+
+.btn-tweet, .btn-tweet2 {
+    position: relative;
+    bottom: -20px;
+    right: -20px;
+}
+
+.btn-tweet2 {
+    width: 80%;
+    height: 7vh;
+    margin-left: 15px;
+    margin-top: -5px;
+}
+
+input.input-tweet {
+    color: #D9D9D9;
+    width: 90%;
+    background-color: black;
+    border: none;
+    box-shadow: none;
+    padding: 20px 0px;
+    margin-left: 5%;
+}
+
+input.input-tweet:focus {
+    outline: none;
+    border-bottom: 1px solid #2F3336;
+}
+
+.icons-tweet {
+    color: #2F3336;
+}
+
+.icons-tweet span:hover {
+    color: #a83bd3;
+    background-color: #6f0b976e;
+    border-radius: 100%;
+}
+
+input::placeholder {
+    font-size: 1.2em;
+}
+
+.btn-rounded {
+    border-radius: 42px;
+    padding: 5px 20px;
+}
+
+.termos {
+    color: #657786;
+    margin-top: 40px;
+    text-align: justify;
+}
+
+.termos span {
+    padding-right: 8px;
+}
+
+.termos span:hover {
+    color: #596774;
+    text-decoration: underline;
+}
+
+.btn-deixar, .btn-seguir {
+    padding: 5px 20px;
+    border-radius: 42px;
+    border: 1px solid #D9D9D9;
+    color: #D9D9D9;
+}
+
+.btn-seguir {
+    background-color: #D9D9D9;
+    color: #2F3336;
+}
+
+.btn-deixar:hover {
+    border: 1px solid #ff0000;
+    color: #ff0000;
+}
+
+.btn-seguir:hover {
+    background-color: #cfcdcd;
+    color: #2F3336;
+}
+
+.popoverClass {
+    z-index: 3;
+    width: 170px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #2F3336;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #D9D9D9;
+    border-radius: 5px;
+    display: none;
+}
+
+.d {
+    display: block;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+
+button:active {
+    background: none;
+    border: none;
+}
+
+.btn-remover {
+    color: #ff0000;
+    width: 100%;
+}
+
+.btn-remover:hover {
+    color: #ff0000;
+    background-color: #15181cc9;
+}
